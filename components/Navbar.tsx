@@ -28,8 +28,8 @@ export const Navbar: React.FC = () => {
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-8 items-center">
             <Link to="/" className={isActive('/')}>Home</Link>
-            <Link to="/shop" className={isActive('/shop')}>Shop All</Link>
-            <Link to="/about" className={isActive('/about')}>Our Story</Link>
+            <Link to="/shop" className={isActive('/shop')}>Products</Link>
+            <Link to="/about" className={isActive('/about')}>About</Link>
           </div>
 
           {/* Icons */}
@@ -77,14 +77,14 @@ export const Navbar: React.FC = () => {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Shop All
+              Products
             </Link>
              <Link 
               to="/about" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Our Story
+              About
             </Link>
           </div>
         </div>

@@ -30,7 +30,7 @@ const Footer = () => (
             </p>
         </div>
         <div>
-          <h4 className="font-bold text-gray-900 mb-4">Shop</h4>
+          <h4 className="font-bold text-gray-900 mb-4">Products</h4>
           <ul className="space-y-2 text-sm text-gray-500">
             <li><a href="#" className="hover:text-brand-600">New Arrivals</a></li>
             <li><a href="#" className="hover:text-brand-600">Best Sellers</a></li>
@@ -84,7 +84,7 @@ const App: React.FC = () => {
               <Route path="/shop" element={<Shop />} />
               <Route path="/about" element={
                 <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-                  <h1 className="text-4xl font-bold mb-4">Our Story</h1>
+                  <h1 className="text-4xl font-bold mb-4">About Us</h1>
                   <p className="text-lg text-gray-600">We are passionate about bringing joy to children everywhere.</p>
                 </div>
               } />
