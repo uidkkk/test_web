@@ -1,10 +1,20 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { products } from '../data/products';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export const getShoppingAssistantResponse = async (userMessage: string, chatHistory: { role: string, parts: { text: string }[] }[]) => {
   try {
+    // MOVE INITIALIZATION INSIDE THE FUNCTION
+    // This prevents the entire website from crashing (White Screen of Death) 
+    // if the API_KEY is missing during the initial page load.
+    const apiKey = process.env.API_KEY;
+    
+    if (!apiKey) {
+      console.error("API_KEY is missing. Please check your environment variables.");
+      return "I'm currently undergoing maintenance (API Key missing). Please check back later!";
+    }
+
+    const ai = new GoogleGenAI({ apiKey: apiKey });
+
     // Create a product context string to help the AI know what we sell
     const productCatalogContext = products.map(p => `${p.name} (ID: ${p.id}, $${p.price}, ${p.category})`).join('\n');
     
